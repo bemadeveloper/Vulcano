@@ -10,9 +10,15 @@
 		D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DD12C07327D00F7235F /* AppDelegate.swift */; };
 		D7210DD42C07327D00F7235F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DD32C07327D00F7235F /* SceneDelegate.swift */; };
 		D7210DD62C07327D00F7235F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DD52C07327D00F7235F /* ViewController.swift */; };
-		D7210DD92C07327D00F7235F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D7210DD82C07327D00F7235F /* Base */; };
 		D7210DDB2C07327E00F7235F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7210DDA2C07327E00F7235F /* Assets.xcassets */; };
 		D7210DDE2C07327E00F7235F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D7210DDD2C07327E00F7235F /* Base */; };
+		D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DE92C07350B00F7235F /* AuthHeaderView.swift */; };
+		D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DEB2C07353700F7235F /* LoginViewController.swift */; };
+		D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DED2C07355A00F7235F /* CustomTextField.swift */; };
+		D7210DF02C07357B00F7235F /* LoginViewControllerSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DEF2C07357B00F7235F /* LoginViewControllerSecond.swift */; };
+		D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF12C07359400F7235F /* PersonalCard.swift */; };
+		D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF32C0735AF00F7235F /* ScreenLoading.swift */; };
+		D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF52C07368A00F7235F /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +26,16 @@
 		D7210DD12C07327D00F7235F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7210DD32C07327D00F7235F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7210DD52C07327D00F7235F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D7210DD82C07327D00F7235F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7210DDA2C07327E00F7235F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7210DDD2C07327E00F7235F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7210DDF2C07327E00F7235F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7210DE92C07350B00F7235F /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		D7210DEB2C07353700F7235F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D7210DED2C07355A00F7235F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D7210DEF2C07357B00F7235F /* LoginViewControllerSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSecond.swift; sourceTree = "<group>"; };
+		D7210DF12C07359400F7235F /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
+		D7210DF32C0735AF00F7235F /* ScreenLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLoading.swift; sourceTree = "<group>"; };
+		D7210DF52C07368A00F7235F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,53 @@
 		D7210DD02C07327D00F7235F /* Vulcano */ = {
 			isa = PBXGroup;
 			children = (
+				D7210DE52C0733E700F7235F /* App */,
+				D7210DE62C07345900F7235F /* Sources */,
+				D7210DE72C07346B00F7235F /* Resources */,
+			);
+			path = Vulcano;
+			sourceTree = "<group>";
+		};
+		D7210DE52C0733E700F7235F /* App */ = {
+			isa = PBXGroup;
+			children = (
 				D7210DD12C07327D00F7235F /* AppDelegate.swift */,
 				D7210DD32C07327D00F7235F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D7210DE62C07345900F7235F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DE82C0734F600F7235F /* Register */,
 				D7210DD52C07327D00F7235F /* ViewController.swift */,
-				D7210DD72C07327D00F7235F /* Main.storyboard */,
+				D7210DF52C07368A00F7235F /* LoadingView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D7210DE72C07346B00F7235F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D7210DDA2C07327E00F7235F /* Assets.xcassets */,
 				D7210DDC2C07327E00F7235F /* LaunchScreen.storyboard */,
 				D7210DDF2C07327E00F7235F /* Info.plist */,
 			);
-			path = Vulcano;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7210DE82C0734F600F7235F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DE92C07350B00F7235F /* AuthHeaderView.swift */,
+				D7210DEB2C07353700F7235F /* LoginViewController.swift */,
+				D7210DED2C07355A00F7235F /* CustomTextField.swift */,
+				D7210DEF2C07357B00F7235F /* LoginViewControllerSecond.swift */,
+				D7210DF12C07359400F7235F /* PersonalCard.swift */,
+				D7210DF32C0735AF00F7235F /* ScreenLoading.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +177,6 @@
 			files = (
 				D7210DDB2C07327E00F7235F /* Assets.xcassets in Resources */,
 				D7210DDE2C07327E00F7235F /* Base in Resources */,
-				D7210DD92C07327D00F7235F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +188,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
+				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
+				D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */,
+				D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */,
+				D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */,
+				D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */,
 				D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */,
+				D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */,
+				D7210DF02C07357B00F7235F /* LoginViewControllerSecond.swift in Sources */,
 				D7210DD42C07327D00F7235F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +203,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D7210DD72C07327D00F7235F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7210DD82C07327D00F7235F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D7210DDC2C07327E00F7235F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,10 +342,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDQUFL254V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vulcano/Info.plist;
+				INFOPLIST_FILE = Vulcano/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,10 +369,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDQUFL254V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vulcano/Info.plist;
+				INFOPLIST_FILE = Vulcano/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
