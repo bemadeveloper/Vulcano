@@ -23,6 +23,11 @@
 		D7210DFC2C079EFC00F7235F /* OnboardingFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */; };
 		D7210DFE2C08C5ED00F7235F /* OnboardingSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */; };
 		D7210E002C09DF4000F7235F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFF2C09DF4000F7235F /* RatingViewController.swift */; };
+		D7210E032C09EB1600F7235F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E022C09EB1600F7235F /* TabViewController.swift */; };
+		D7210E052C09FBFF00F7235F /* CompetitionsFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */; };
+		D7210E082C09FD7500F7235F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E072C09FD7500F7235F /* FriendsViewController.swift */; };
+		D7210E0F2C09FEE100F7235F /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E0E2C09FEE100F7235F /* NotesVC.swift */; };
+		D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E102C09FF1600F7235F /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirst.swift; sourceTree = "<group>"; };
 		D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecond.swift; sourceTree = "<group>"; };
 		D7210DFF2C09DF4000F7235F /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		D7210E022C09EB1600F7235F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsFirstVC.swift; sourceTree = "<group>"; };
+		D7210E072C09FD7500F7235F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		D7210E0E2C09FEE100F7235F /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
+		D7210E102C09FF1600F7235F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,7 @@
 		D7210DE62C07345900F7235F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D7210E092C09FE8700F7235F /* TabBar */,
 				D7210DFA2C079EE400F7235F /* Onboarding */,
 				D7210DE82C0734F600F7235F /* Register */,
 				D7210DD52C07327D00F7235F /* ViewController.swift */,
@@ -143,6 +154,50 @@
 				D7210DFF2C09DF4000F7235F /* RatingViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D7210E012C09E7DE00F7235F /* Competitions */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E022C09EB1600F7235F /* TabViewController.swift */,
+				D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */,
+			);
+			path = Competitions;
+			sourceTree = "<group>";
+		};
+		D7210E062C09FD4900F7235F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E072C09FD7500F7235F /* FriendsViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		D7210E092C09FE8700F7235F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E0D2C09FED400F7235F /* Settings */,
+				D7210E0C2C09FECD00F7235F /* Notes */,
+				D7210E062C09FD4900F7235F /* Friends */,
+				D7210E012C09E7DE00F7235F /* Competitions */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D7210E0C2C09FECD00F7235F /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E0E2C09FEE100F7235F /* NotesVC.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		D7210E0D2C09FED400F7235F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E102C09FF1600F7235F /* SettingsVC.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,13 +270,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
 				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
 				D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */,
+				D7210E052C09FBFF00F7235F /* CompetitionsFirstVC.swift in Sources */,
+				D7210E082C09FD7500F7235F /* FriendsViewController.swift in Sources */,
+				D7210E032C09EB1600F7235F /* TabViewController.swift in Sources */,
 				D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */,
 				D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */,
 				D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */,
 				D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */,
+				D7210E0F2C09FEE100F7235F /* NotesVC.swift in Sources */,
 				D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */,
 				D7210DF92C074F4700F7235F /* Model.swift in Sources */,
 				D7210DF02C07357B00F7235F /* LoginViewControllerSecond.swift in Sources */,

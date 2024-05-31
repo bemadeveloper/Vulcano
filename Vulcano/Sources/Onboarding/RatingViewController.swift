@@ -16,6 +16,7 @@ class RatingViewController: UIViewController {
     private let vulcanoImage = UIImageView()
     private let nextButton = UIButton()
     private let stayLabel = UILabel()
+    private let closeButton = UIButton()
 
     // MARK: - Lifecycle
 
@@ -24,8 +25,8 @@ class RatingViewController: UIViewController {
         setColorBackground()
         setupUI()
         loadData()
+        setupNavigationBar()
     }
-
 
     // MARK: - Setup
 
@@ -35,6 +36,10 @@ class RatingViewController: UIViewController {
 
     private func setColorBackground() {
         view.backgroundColor = UIColor(hex: "#1A1717")
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonTapped))
     }
 
     private func setupUI() {
@@ -54,12 +59,20 @@ class RatingViewController: UIViewController {
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        
+        closeButton.setImage(UIImage(named: "xmark.circle"), for: .normal)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpOutside)
 
         view.addSubview(vulcanoImage)
         view.addSubview(nextButton)
         view.addSubview(stayLabel)
+        view.addSubview(closeButton)
 
         NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
             stayLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stayLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 60),
 
@@ -77,6 +90,11 @@ class RatingViewController: UIViewController {
         requestNotificationAuthorization()
     }
 
+    @objc private func closeButtonTapped() {
+        // Handle close button action here
+        dismiss(animated: true, completion: nil)
+    }
+
     private func requestNotificationAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] (granted, error) in
             guard granted else {
@@ -92,7 +110,7 @@ class RatingViewController: UIViewController {
     private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            let nextViewController = OnboardingSecond()
+            let nextViewController = TabViewController()
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }))
         present(alertController, animated: true, completion: nil)
