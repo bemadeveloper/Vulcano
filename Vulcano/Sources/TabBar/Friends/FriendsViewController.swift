@@ -12,12 +12,23 @@ class FriendsViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var friends: [[Friend]]?
+    
     
     // MARK: - UI
     
     let competitionLabel  = UILabel()
     private let addButton = UIButton()
     
+    // MARK: - Table
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
+    }()
     
     // MARK: - Lyfecycle
 
@@ -25,6 +36,8 @@ class FriendsViewController: UIViewController {
         super.viewDidLoad()
         setGradientBackground()
         self.setupUI()
+        friends = Friend.friends
+        navigationController?.navigationBar.prefersLargeTitles = true
 
     }
     
@@ -43,7 +56,14 @@ class FriendsViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.addSubview(tableView)
         
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     @objc private func addButtonTapped() {
@@ -51,4 +71,32 @@ class FriendsViewController: UIViewController {
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
+}
+
+extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        friends?[section].count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        friends?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
+        cell?.friend = friends?[indexPath.section][indexPath.row]
+        cell?.accessoryType = .detailDisclosureButton
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let viewController = DetailViewController()
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        viewController.friend = persons?[indexPath.section][indexPath.row]
+//        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

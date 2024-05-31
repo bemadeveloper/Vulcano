@@ -83,8 +83,10 @@ class CompetitionsFirstVC: UIViewController {
         calendarView.calendar = .current
         calendarView.locale = .current
         calendarView.fontDesign = .rounded
-        calendarView.tintColor = .white
+        calendarView.tintColor = .black
+        calendarView.backgroundColor = .white
         
+        calendarView.delegate = self
         calendarView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(calendarView)
         
@@ -92,14 +94,37 @@ class CompetitionsFirstVC: UIViewController {
             calendarView.topAnchor.constraint(equalTo: competitionLabel.bottomAnchor, constant: 20),
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            calendarView.heightAnchor.constraint(equalToConstant: 300)
+            calendarView.heightAnchor.constraint(equalToConstant: 400)
         ])
+        
+        DispatchQueue.main.async {
+            let fittingSize = UIView.layoutFittingCompressedSize
+            let targetSize = calendarView.systemLayoutSizeFitting(fittingSize)
+            calendarView.heightAnchor.constraint(equalToConstant: targetSize.height).isActive = true
+        }
         
     }
     
     @objc private func addButtonTapped() {
         let nextViewController = ScreenLoading()
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+}
+
+extension CompetitionsFirstVC: UICalendarViewDelegate {
+    func calendarView(_ calendarView: UICalendarView, didSelectDate date: Date, at indexPath: IndexPath) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from: date)
+        
+        // Показать дату в консоли или использовать ее другим способом
+        print("Selected date: \(dateString)")
+        
+        // Вывести дату на экран, например, в алерте
+        let alertController = UIAlertController(title: "Selected Date", message: dateString, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
     
