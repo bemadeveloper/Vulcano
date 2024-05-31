@@ -6,7 +6,24 @@
 //
 
 import UIKit
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate { }
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func application(
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      // ... existing code ...
+      registerForPushNotifications()
+      return true
+    }
+}
+
+func registerForPushNotifications() {
+  UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+    (granted, error) in
+    print("Permission granted: \(granted)")
+  }
+}
 

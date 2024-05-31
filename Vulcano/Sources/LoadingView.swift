@@ -113,12 +113,9 @@ class LoadingView: UIView {
             if progress >= 1.0 {
                 timer.invalidate()
                 self.hide()
-                
             }
-            
         }
     }
-    
 }
 
 public extension UIColor {

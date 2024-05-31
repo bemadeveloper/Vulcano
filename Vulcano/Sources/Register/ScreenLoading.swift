@@ -30,6 +30,9 @@ class ScreenLoading: UIViewController {
             sleep(5)
             DispatchQueue.main.async {
                 self.loadingView.hide()
+                
+                let onboardingFirstVC = OnboardingFirst()
+                self.navigationController?.pushViewController(onboardingFirstVC, animated: true)
             }
         }
     }
@@ -156,3 +159,4 @@ class Load: UIView {
         }
     }
 }
+

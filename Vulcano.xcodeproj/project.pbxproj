@@ -19,6 +19,10 @@
 		D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF12C07359400F7235F /* PersonalCard.swift */; };
 		D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF32C0735AF00F7235F /* ScreenLoading.swift */; };
 		D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF52C07368A00F7235F /* LoadingView.swift */; };
+		D7210DF92C074F4700F7235F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF82C074F4700F7235F /* Model.swift */; };
+		D7210DFC2C079EFC00F7235F /* OnboardingFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */; };
+		D7210DFE2C08C5ED00F7235F /* OnboardingSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */; };
+		D7210E002C09DF4000F7235F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFF2C09DF4000F7235F /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		D7210DF12C07359400F7235F /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
 		D7210DF32C0735AF00F7235F /* ScreenLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLoading.swift; sourceTree = "<group>"; };
 		D7210DF52C07368A00F7235F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D7210DF82C074F4700F7235F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirst.swift; sourceTree = "<group>"; };
+		D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecond.swift; sourceTree = "<group>"; };
+		D7210DFF2C09DF4000F7235F /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 		D7210DD02C07327D00F7235F /* Vulcano */ = {
 			isa = PBXGroup;
 			children = (
+				D7210DF72C074F2400F7235F /* Model */,
 				D7210DE52C0733E700F7235F /* App */,
 				D7210DE62C07345900F7235F /* Sources */,
 				D7210DE72C07346B00F7235F /* Resources */,
@@ -87,6 +96,7 @@
 		D7210DE62C07345900F7235F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D7210DFA2C079EE400F7235F /* Onboarding */,
 				D7210DE82C0734F600F7235F /* Register */,
 				D7210DD52C07327D00F7235F /* ViewController.swift */,
 				D7210DF52C07368A00F7235F /* LoadingView.swift */,
@@ -115,6 +125,24 @@
 				D7210DF32C0735AF00F7235F /* ScreenLoading.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		D7210DF72C074F2400F7235F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DF82C074F4700F7235F /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D7210DFA2C079EE400F7235F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */,
+				D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */,
+				D7210DFF2C09DF4000F7235F /* RatingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +223,12 @@
 				D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */,
 				D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */,
 				D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */,
+				D7210DF92C074F4700F7235F /* Model.swift in Sources */,
 				D7210DF02C07357B00F7235F /* LoginViewControllerSecond.swift in Sources */,
+				D7210DFE2C08C5ED00F7235F /* OnboardingSecond.swift in Sources */,
 				D7210DD42C07327D00F7235F /* SceneDelegate.swift in Sources */,
+				D7210DFC2C079EFC00F7235F /* OnboardingFirst.swift in Sources */,
+				D7210E002C09DF4000F7235F /* RatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

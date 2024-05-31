@@ -60,7 +60,6 @@ class CustomTextField: UITextField {
             self.borderStyle = .roundedRect
         }
         
-        // Настройка атрибутов плейсхолдера
         let placeholderAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor(hex: "#838B91"),
             .font: UIFont.systemFont(ofSize: 15, weight: .regular)

@@ -8,7 +8,11 @@
 import Foundation
 import UIKit
 
+import UIKit
+
 class LoginViewControllerSecond: UIViewController {
+    let dateFormatter = DateFormatter()
+    //dateFormatter.dateFormat = "dd/MM/yyyy"
     var username: String?
     var completionHandler: ((String?) -> Void)?
     
@@ -18,7 +22,7 @@ class LoginViewControllerSecond: UIViewController {
     
     // MARK: - UI
     
-    private let headerView = AuthHeaderView(title: "Create your profile!", subTitle: "Let's start with your name")
+    private let headerView = AuthHeaderView(title: "Create your profile!", subTitle: "Enter your date of birth")
     
     let dateField = CustomTextField(fieldType: .dateOfBirth)
     private let nextButton = UIButton()
@@ -43,7 +47,7 @@ class LoginViewControllerSecond: UIViewController {
     }()
     
     // MARK: - Lyfecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackground()
@@ -157,6 +161,73 @@ class LoginViewControllerSecond: UIViewController {
     
     @objc private func nextButtonTapped() {
         let nextViewController = PersonalCard()
+        nextViewController.username = username
+        nextViewController.date = dateField.text
         navigationController?.pushViewController(nextViewController, animated: true)
+
+        if let dateString = dateField.text, !dateString.isEmpty, let dateOfBirth = dateFormatter.date(from: dateString) {
+            let calendar = Calendar.current
+            let ageComponents = calendar.dateComponents([.year], from: dateOfBirth, to: Date())
+            if let age = ageComponents.year {
+                nextViewController.age = "\(age)"
+            } else {
+                print("Error calculating age")
+            }
+        } else {
+            print("Error date")
+        }
+    }
+        
+        
+    func registerUser(username: String, dateOfBirth: String) {
+            let url = URL(string: "https://netninjanation.fun/api/v2/new/register")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            
+            let parameters: [String: Any] = [
+                "username": username,
+                "date_of_birth": dateOfBirth
+            ]
+            
+            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+            
+            let task = session.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                guard let data = data else {
+                    print("No data")
+                    return
+                }
+                
+                do {
+                    if let jsonResponse = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                        print("Response: \(jsonResponse)")
+                        DispatchQueue.main.async {
+                            // Handle success (e.g., navigate to the next screen)
+                        }
+                    }
+                } catch {
+                    print("JSON error: \(error)")
+                }
+            }
+            
+            task.resume()
+        }
+    }
+
+    
+extension LoginViewControllerSecond: URLSessionDelegate {
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        // Trust the certificate even if it is self-signed or invalid
+        let trust = challenge.protectionSpace.serverTrust
+        let credential = trust.map { URLCredential(trust: $0) }
+        completionHandler(.useCredential, credential)
     }
 }
+

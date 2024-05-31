@@ -11,6 +11,12 @@ import UIKit
 
 class PersonalCard: UIViewController {
     
+    // MARK: - Properties
+    
+    var age: String?
+    var username: String?
+    var date: String?
+    
     // MARK: - UI
     
     private let headerView = AuthHeaderView(title: "Your personal card", subTitle: "Add friends and compete with them")
@@ -20,7 +26,7 @@ class PersonalCard: UIViewController {
     private lazy var card: UIView = {
         let card = UIView()
         card.backgroundColor = UIColor(hex: "#B00D22")
-        card.layer.cornerRadius = 6
+        card.layer.cornerRadius = 10
         card.translatesAutoresizingMaskIntoConstraints = false
         
         return card
@@ -28,9 +34,7 @@ class PersonalCard: UIViewController {
     
     private let nameLabel = UILabel()
     private let dateLabel = UILabel()
-    
-    var username: String?
-    var date: String?
+    private let ageFinal = UILabel()
     
     // MARK: - Lines
     
@@ -57,8 +61,6 @@ class PersonalCard: UIViewController {
         setGradientBackground()
         self.setupUI()
 
-        nameLabel.text = username
-        dateLabel.text = date
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +82,15 @@ class PersonalCard: UIViewController {
     }
     
     private func setupUI() {
+        nameLabel.text = username
+        nameLabel.textColor = .white
+        
+        dateLabel.text = date
+        dateLabel.textColor = .white
+        
+        ageFinal.text = age
+        ageFinal.textColor = .white
+        
         finishButton.setTitle("Finish", for: .normal)
         finishButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         finishButton.layer.cornerRadius = 15
@@ -92,6 +103,7 @@ class PersonalCard: UIViewController {
         
         card.addSubview(nameLabel)
         card.addSubview(dateLabel)
+        card.addSubview(ageFinal)
        
         self.view.addSubview(finishButton)
         self.view.addSubview(line)
@@ -101,6 +113,7 @@ class PersonalCard: UIViewController {
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        ageFinal.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             line.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 145),
@@ -120,7 +133,7 @@ class PersonalCard: UIViewController {
             
             self.card.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 30),
             self.card.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            self.card.heightAnchor.constraint(equalToConstant: 55),
+            self.card.heightAnchor.constraint(equalToConstant: 80),
             self.card.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
             self.finishButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -128,10 +141,14 @@ class PersonalCard: UIViewController {
             self.finishButton.heightAnchor.constraint(equalToConstant: 50),
             self.finishButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
-            nameLabel.centerXAnchor.constraint(equalTo: card.centerXAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 10),
             nameLabel.topAnchor.constraint(equalTo: card.topAnchor, constant: 10),
-            dateLabel.centerXAnchor.constraint(equalTo: card.centerXAnchor),
-            dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10)
+            
+            dateLabel.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 10),
+            dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            
+            ageFinal.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: 10),
+            ageFinal.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10)
         ])
     }
     

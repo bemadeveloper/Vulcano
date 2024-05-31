@@ -8,7 +8,12 @@
 import Foundation
 import UIKit
 
+import UIKit
+
 class LoginViewController: UIViewController {
+    
+    var username: String?
+    var completionHandler: ((String?) -> Void)?
     
     // MARK: - UI
     
@@ -44,6 +49,7 @@ class LoginViewController: UIViewController {
         self.setupUI()
         
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,6 +129,9 @@ class LoginViewController: UIViewController {
     
     @objc private func nextButtonTapped() {
         let nextViewController = LoginViewControllerSecond()
+        let personalCard = PersonalCard()
+        personalCard.username = usernameField.text
+        nextViewController.username = usernameField.text // Pass the username
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
