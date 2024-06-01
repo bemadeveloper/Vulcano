@@ -20,4 +20,8 @@ extension Friend {
         [Friend(name: "Wade Warren", date: "11.05.2000")],
         [Friend(name: "Albert Flores", date: "12.07.1999")]
     ]
+    
+    static func addFriend(_ friend: Friend) {
+        friends.append([friend])
+    }
 }

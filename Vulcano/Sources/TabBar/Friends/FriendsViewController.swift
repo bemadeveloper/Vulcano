@@ -40,8 +40,13 @@ class FriendsViewController: UIViewController {
         setGradientBackground()
         setupUI()
         friends = Friend.friends
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     
@@ -60,6 +65,12 @@ class FriendsViewController: UIViewController {
     
     private func setupUI() {
         print("h")
+        print(addButton.frame)
+        DispatchQueue.main.async {
+            print("friendsLabel frame: \(self.friendsLabel.frame)")
+            print("addButton frame: \(self.addButton.frame)")
+            print("tableView frame: \(self.tableView.frame)")
+        }
         addButton.setTitle("Add", for: .normal)
         addButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         addButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
@@ -84,27 +95,26 @@ class FriendsViewController: UIViewController {
         view.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            friendsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
-            friendsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            friendsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            friendsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            addButton.centerYAnchor.constraint(equalTo: friendsLabel.centerYAnchor),
+            addButton.heightAnchor.constraint(equalToConstant: 40),
+            addButton.widthAnchor.constraint(equalToConstant: 100),
+            
+            tableView.topAnchor.constraint(equalTo: friendsLabel.bottomAnchor, constant: 20),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            addButton.leadingAnchor.constraint(equalTo: friendsLabel.trailingAnchor, constant: 120),
-            addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
-            addButton.heightAnchor.constraint(equalToConstant: 40),
-            addButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
     @objc private func addButtonTappedFor() {
         print("Add button tapped")
         let nextViewController = AddFriendViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
-//        nextViewController.modalPresentationStyle = .pageSheet
-//        present(nextViewController, animated: true, completion: nil)
+        nextViewController.modalPresentationStyle = .pageSheet
+        present(nextViewController, animated: true, completion: nil)
     }
     
 }
@@ -143,8 +153,17 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
         deleteAction.backgroundColor = UIColor(hex: "#B00D22")
         
         let editAction = UIContextualAction(style: .normal, title: nil) { (action, view, completionHandler) in
-            // Действие по редактированию ячейки
-            // Например, вы можете открыть экран редактирования или выполнить другие действия
+            let friend = self.friends?[indexPath.section][indexPath.row]
+            
+            let editFriendViewController = EditFriendViewController()
+            editFriendViewController.friend = friend
+            
+            editFriendViewController.completionHandler = { editedFriend in
+            
+                self.friends?[indexPath.section][indexPath.row] = editedFriend
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            self.present(editFriendViewController, animated: true, completion: nil)
             
             completionHandler(true)
         }

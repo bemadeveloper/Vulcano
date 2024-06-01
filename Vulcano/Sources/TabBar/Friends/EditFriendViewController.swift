@@ -1,5 +1,5 @@
 //
-//  AddFriendViewController.swift
+//  EditFriendViewController.swift
 //  Vulcano
 //
 //  Created by Bema on 1/6/24.
@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 
-class AddFriendViewController: UIViewController {
+class EditFriendViewController: UIViewController {
+    var friend: Friend?
+    var completionHandler: ((Friend) -> Void)?
+    
     
     private let headerTitle = UILabel()
     
@@ -63,7 +66,7 @@ class AddFriendViewController: UIViewController {
     }
     
     private func setupUI() {
-        saveButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        saveButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
         saveButton.tintColor = .white
         saveButton.layer.cornerRadius = saveButton.frame.width / 2
         saveButton.layer.masksToBounds = true
@@ -75,7 +78,7 @@ class AddFriendViewController: UIViewController {
         fullName.textColor = UIColor(hex: "#B00D22")
         fullName.text = "Full name"
         fullName.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        fullName.translatesAutoresizingMaskIntoConstraints = false 
+        fullName.translatesAutoresizingMaskIntoConstraints = false
         
         dateOfBirth.textColor = UIColor(hex: "#B00D22")
         dateOfBirth.text = "Date of birth"
@@ -83,7 +86,7 @@ class AddFriendViewController: UIViewController {
         dateOfBirth.translatesAutoresizingMaskIntoConstraints = false
         
         headerTitle.textColor = .white
-        headerTitle.text = "Add new friend"
+        headerTitle.text = "Edit friend"
         headerTitle.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         headerTitle.translatesAutoresizingMaskIntoConstraints = false
         
@@ -134,6 +137,11 @@ class AddFriendViewController: UIViewController {
             dateOfBirth.widthAnchor.constraint(equalToConstant: 100),
             dateOfBirth.heightAnchor.constraint(equalToConstant: 20)
         ])
+        
+        if let friend = friend {
+            usernameField.text = friend.name
+            dateField.text = friend.date
+        }
     }
     
     private func setGradientBackground() {
@@ -151,8 +159,21 @@ class AddFriendViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func saveButtonTapped() {
-        let newFriend = Friend(name: usernameField.text ?? "None", date: dateField.text ?? "None")
-        Friend.addFriend(newFriend)
+        guard let name = usernameField.text, !name.isEmpty,
+              let date = dateField.text, !date.isEmpty else {
+            // Показать предупреждение о заполнении всех полей
+            return
+        }
+        
+        // Обновление данных друга
+        friend?.name = name
+        friend?.date = date
+        
+        // Вызов обработчика завершения редактирования
+        if let friend = friend {
+            completionHandler?(friend)
+        }
         navigationController?.popViewController(animated: true)
     }
+    
 }

@@ -47,8 +47,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setGradientBackground()
         self.setupUI()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -32,6 +32,7 @@
 		D7210E152C0A534300F7235F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E142C0A534300F7235F /* Friend.swift */; };
 		D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E162C0A548200F7235F /* CustomTableViewCell.swift */; };
 		D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E182C0A704A00F7235F /* AddFriendViewController.swift */; };
+		D7210E1B2C0B177100F7235F /* EditFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D7210E142C0A534300F7235F /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		D7210E162C0A548200F7235F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D7210E182C0A704A00F7235F /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				D7210E142C0A534300F7235F /* Friend.swift */,
 				D7210E162C0A548200F7235F /* CustomTableViewCell.swift */,
 				D7210E182C0A704A00F7235F /* AddFriendViewController.swift */,
+				D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
 				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
+				D7210E1B2C0B177100F7235F /* EditFriendViewController.swift in Sources */,
 				D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */,
 				D7210E052C09FBFF00F7235F /* CompetitionsFirstVC.swift in Sources */,
 				D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */,
