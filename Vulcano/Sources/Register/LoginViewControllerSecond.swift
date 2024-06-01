@@ -136,14 +136,12 @@ class LoginViewControllerSecond: UIViewController {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
         
-        // Create toolbar with "Done" button
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: true)
         
-        // Assign datePicker and toolbar to inputView and inputAccessoryView of the dateField
         dateField.inputView = datePicker
         dateField.inputAccessoryView = toolbar
     }
@@ -164,6 +162,12 @@ class LoginViewControllerSecond: UIViewController {
         nextViewController.username = username
         nextViewController.date = dateField.text
         navigationController?.pushViewController(nextViewController, animated: true)
+        
+        let newFriend = Friend(name: LoginViewController().usernameField.text ?? "None", date: dateField.text ?? "None")
+        Friend.addFriend(newFriend)
+        if let section = Friend.friends.firstIndex(where: { $0.contains(newFriend) }) {
+            Friend.friends[section].insert(newFriend, at: 0)
+        }
 
         if let dateString = dateField.text, !dateString.isEmpty, let dateOfBirth = dateFormatter.date(from: dateString) {
             let calendar = Calendar.current
@@ -209,7 +213,6 @@ class LoginViewControllerSecond: UIViewController {
                     if let jsonResponse = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
                         print("Response: \(jsonResponse)")
                         DispatchQueue.main.async {
-                            // Handle success (e.g., navigate to the next screen)
                         }
                     }
                 } catch {
@@ -224,7 +227,6 @@ class LoginViewControllerSecond: UIViewController {
     
 extension LoginViewControllerSecond: URLSessionDelegate {
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        // Trust the certificate even if it is self-signed or invalid
         let trust = challenge.protectionSpace.serverTrust
         let credential = trust.map { URLCredential(trust: $0) }
         completionHandler(.useCredential, credential)

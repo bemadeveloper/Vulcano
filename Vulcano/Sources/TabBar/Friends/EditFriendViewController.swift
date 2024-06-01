@@ -161,15 +161,12 @@ class EditFriendViewController: UIViewController {
     @objc private func saveButtonTapped() {
         guard let name = usernameField.text, !name.isEmpty,
               let date = dateField.text, !date.isEmpty else {
-            // Показать предупреждение о заполнении всех полей
             return
         }
         
-        // Обновление данных друга
         friend?.name = name
         friend?.date = date
         
-        // Вызов обработчика завершения редактирования
         if let friend = friend {
             completionHandler?(friend)
         }

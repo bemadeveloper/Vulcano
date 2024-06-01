@@ -95,7 +95,7 @@ class FriendsViewController: UIViewController {
         view.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            friendsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            friendsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             friendsLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             
             addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),

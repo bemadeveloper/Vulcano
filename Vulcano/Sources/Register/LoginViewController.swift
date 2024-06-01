@@ -128,8 +128,9 @@ class LoginViewController: UIViewController {
         let nextViewController = LoginViewControllerSecond()
         let personalCard = PersonalCard()
         personalCard.username = usernameField.text
-        nextViewController.username = usernameField.text // Pass the username
+        nextViewController.username = usernameField.text
         navigationController?.pushViewController(nextViewController, animated: true)
+       
     }
 }
 

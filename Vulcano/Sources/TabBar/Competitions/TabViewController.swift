@@ -45,7 +45,7 @@ class TabViewController: UITabBarController {
             selectedImage: UIImage(systemName: "list.bullet.circle.fill")
         )
         let notesViewController = NotesVC()
-        notesViewController.title = "Notes"
+        notesViewController.title = notesViewController.headerTitle.text
         notesViewController.tabBarItem = notes
         
         let settings = UITabBarItem(
@@ -54,7 +54,7 @@ class TabViewController: UITabBarController {
             selectedImage: UIImage(systemName: "gearshape.fill")
         )
         let settingsViewController = SettingsVC()
-        settingsViewController.title = "Settings"
+        settingsViewController.title = settingsViewController.competitionLabel.text
         settingsViewController.tabBarItem = settings
         
         let controllers = [

@@ -33,6 +33,10 @@
 		D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E162C0A548200F7235F /* CustomTableViewCell.swift */; };
 		D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E182C0A704A00F7235F /* AddFriendViewController.swift */; };
 		D7210E1B2C0B177100F7235F /* EditFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */; };
+		D7210E1D2C0B292A00F7235F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E1C2C0B292A00F7235F /* Cell.swift */; };
+		D7210E1F2C0B33B400F7235F /* CompositionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E1E2C0B33B400F7235F /* CompositionalModel.swift */; };
+		D7210E212C0B5AD400F7235F /* CustomSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E202C0B5AD400F7235F /* CustomSettingModel.swift */; };
+		D7210E232C0B5E2F00F7235F /* CellSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E222C0B5E2F00F7235F /* CellSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		D7210E162C0A548200F7235F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D7210E182C0A704A00F7235F /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendViewController.swift; sourceTree = "<group>"; };
+		D7210E1C2C0B292A00F7235F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		D7210E1E2C0B33B400F7235F /* CompositionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalModel.swift; sourceTree = "<group>"; };
+		D7210E202C0B5AD400F7235F /* CustomSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingModel.swift; sourceTree = "<group>"; };
+		D7210E222C0B5E2F00F7235F /* CellSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				D7210E0E2C09FEE100F7235F /* NotesVC.swift */,
+				D7210E1C2C0B292A00F7235F /* Cell.swift */,
+				D7210E1E2C0B33B400F7235F /* CompositionalModel.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				D7210E102C09FF1600F7235F /* SettingsVC.swift */,
+				D7210E202C0B5AD400F7235F /* CustomSettingModel.swift */,
+				D7210E222C0B5E2F00F7235F /* CellSetting.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -287,7 +299,9 @@
 			files = (
 				D7210E152C0A534300F7235F /* Friend.swift in Sources */,
 				D7210E132C0A14D200F7235F /* CustomCalendarCell.swift in Sources */,
+				D7210E212C0B5AD400F7235F /* CustomSettingModel.swift in Sources */,
 				D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */,
+				D7210E1F2C0B33B400F7235F /* CompositionalModel.swift in Sources */,
 				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
 				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
@@ -297,6 +311,7 @@
 				D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */,
 				D7210E082C09FD7500F7235F /* FriendsViewController.swift in Sources */,
 				D7210E032C09EB1600F7235F /* TabViewController.swift in Sources */,
+				D7210E1D2C0B292A00F7235F /* Cell.swift in Sources */,
 				D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */,
 				D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */,
 				D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */,
@@ -308,6 +323,7 @@
 				D7210DFE2C08C5ED00F7235F /* OnboardingSecond.swift in Sources */,
 				D7210DD42C07327D00F7235F /* SceneDelegate.swift in Sources */,
 				D7210DFC2C079EFC00F7235F /* OnboardingFirst.swift in Sources */,
+				D7210E232C0B5E2F00F7235F /* CellSetting.swift in Sources */,
 				D7210E002C09DF4000F7235F /* RatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
