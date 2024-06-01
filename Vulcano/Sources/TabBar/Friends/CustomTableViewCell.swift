@@ -20,13 +20,15 @@ class CustomTableViewCell: UITableViewCell {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .white
         return label
     }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textColor = .white
         return label
     }()
     
@@ -36,6 +38,7 @@ class CustomTableViewCell: UITableViewCell {
         stack.axis = .vertical
         stack.distribution = .fill
         stack.spacing = 1
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -46,6 +49,7 @@ class CustomTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupHierarchy()
         setupLayout()
+        setupCell()
     }
     
     required init?(coder: NSCoder) {
@@ -54,14 +58,23 @@ class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Setup
     
+    private func setupCell() {
+        self.backgroundColor = UIColor(hex: "#B00D22")
+        self.layer.cornerRadius = 20
+        self.layer.masksToBounds = true
+    }
+    
     private func setupHierarchy() {
+        self.addSubview(stack)
         stack.addArrangedSubview(nameLabel)
         stack.addArrangedSubview(dateLabel)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            
+            stack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
     

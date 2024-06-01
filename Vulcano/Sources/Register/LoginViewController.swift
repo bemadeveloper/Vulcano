@@ -48,7 +48,6 @@ class LoginViewController: UIViewController {
         setGradientBackground()
         self.setupUI()
         
-        // Do any additional setup after loading the view.
         
     }
     

@@ -36,7 +36,7 @@ class TabViewController: UITabBarController {
             selectedImage: UIImage(systemName: "person.2.fill")
         )
         let friendsViewController = FriendsViewController()
-        friendsViewController.title = "Friends"
+        friendsViewController.title = friendsViewController.friendsLabel.text
         friendsViewController.tabBarItem = friends
         
         let notes = UITabBarItem(

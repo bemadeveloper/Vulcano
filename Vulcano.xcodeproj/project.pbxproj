@@ -29,8 +29,9 @@
 		D7210E0F2C09FEE100F7235F /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E0E2C09FEE100F7235F /* NotesVC.swift */; };
 		D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E102C09FF1600F7235F /* SettingsVC.swift */; };
 		D7210E132C0A14D200F7235F /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */; };
-		D7210E152C0A534300F7235F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E142C0A534300F7235F /* Model.swift */; };
+		D7210E152C0A534300F7235F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E142C0A534300F7235F /* Friend.swift */; };
 		D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E162C0A548200F7235F /* CustomTableViewCell.swift */; };
+		D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E182C0A704A00F7235F /* AddFriendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +59,9 @@
 		D7210E0E2C09FEE100F7235F /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		D7210E102C09FF1600F7235F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarCell.swift; sourceTree = "<group>"; };
-		D7210E142C0A534300F7235F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D7210E142C0A534300F7235F /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		D7210E162C0A548200F7235F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D7210E182C0A704A00F7235F /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				D7210E072C09FD7500F7235F /* FriendsViewController.swift */,
-				D7210E142C0A534300F7235F /* Model.swift */,
+				D7210E142C0A534300F7235F /* Friend.swift */,
 				D7210E162C0A548200F7235F /* CustomTableViewCell.swift */,
+				D7210E182C0A704A00F7235F /* AddFriendViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -279,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7210E152C0A534300F7235F /* Model.swift in Sources */,
+				D7210E152C0A534300F7235F /* Friend.swift in Sources */,
 				D7210E132C0A14D200F7235F /* CustomCalendarCell.swift in Sources */,
 				D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */,
 				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
@@ -287,6 +290,7 @@
 				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
 				D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */,
 				D7210E052C09FBFF00F7235F /* CompetitionsFirstVC.swift in Sources */,
+				D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */,
 				D7210E082C09FD7500F7235F /* FriendsViewController.swift in Sources */,
 				D7210E032C09EB1600F7235F /* TabViewController.swift in Sources */,
 				D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */,
