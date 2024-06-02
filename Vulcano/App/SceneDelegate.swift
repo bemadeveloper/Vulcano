@@ -16,10 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
+        let viewController = ExampleViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
+    
+//    func sceneDidEnterBackground(_ scene: UIScene) {
+//        (UIApplication.shared.delegate as? StorageManager)?.saveContext()
+//    }
+    
 }
 
