@@ -11,10 +11,14 @@ import UIKit
 import UIKit
 
 class LoginViewControllerSecond: UIViewController {
+    
+    let appDelegate = AppDelegate()
     let dateFormatter = DateFormatter()
     //dateFormatter.dateFormat = "dd/MM/yyyy"
     var username: String?
     var completionHandler: ((String?) -> Void)?
+    private let manager = StorageManager.shared
+    var friend: List?
     
     // MARK: - DatePicker
     
@@ -25,7 +29,6 @@ class LoginViewControllerSecond: UIViewController {
     private let headerView = AuthHeaderView(title: "Create your profile!", subTitle: "Enter your date of birth")
     
     let dateField = CustomTextField(fieldType: .dateOfBirth)
-    private let nextButton = UIButton()
     private let dateOfBirth = UILabel()
     
     // MARK: - Lines
@@ -44,6 +47,16 @@ class LoginViewControllerSecond: UIViewController {
         line.layer.cornerRadius = 3
         line.translatesAutoresizingMaskIntoConstraints = false
         return line
+    }()
+    
+    private lazy var nextButton: UIButton = {
+        let nextButton = UIButton(primaryAction: action)
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        nextButton.layer.cornerRadius = 15
+        nextButton.backgroundColor = UIColor(hex: "#B00D22")
+        nextButton.setTitleColor(.white, for: .normal)
+        return nextButton
     }()
     
     // MARK: - Lyfecycle
@@ -75,12 +88,6 @@ class LoginViewControllerSecond: UIViewController {
     }
     
     private func setupUI() {
-        nextButton.setTitle("Next", for: .normal)
-        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        nextButton.layer.cornerRadius = 15
-        nextButton.backgroundColor = UIColor(hex: "#B00D22")
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
         dateOfBirth.textColor = UIColor(hex: "#B00D22")
         dateOfBirth.text = "Date of birth"
@@ -157,29 +164,22 @@ class LoginViewControllerSecond: UIViewController {
         dateField.resignFirstResponder()
     }
     
-    @objc private func nextButtonTapped() {
+    lazy var action = UIAction { [weak self] _ in
         let nextViewController = PersonalCard()
-        nextViewController.username = username
-        nextViewController.date = dateField.text
-        navigationController?.pushViewController(nextViewController, animated: true)
+        nextViewController.username = self?.username
+        nextViewController.date = self?.dateField.text
         
-        let newFriend = Friend(name: LoginViewController().usernameField.text ?? "None", date: dateField.text ?? "None")
-        Friend.addFriend(newFriend)
-        if let section = Friend.friends.firstIndex(where: { $0.contains(newFriend) }) {
-            Friend.friends[section].insert(newFriend, at: 0)
-        }
-
-        if let dateString = dateField.text, !dateString.isEmpty, let dateOfBirth = dateFormatter.date(from: dateString) {
-            let calendar = Calendar.current
-            let ageComponents = calendar.dateComponents([.year], from: dateOfBirth, to: Date())
-            if let age = ageComponents.year {
-                nextViewController.age = "\(age)"
-            } else {
-                print("Error calculating age")
-            }
+        guard let self = self else { return }
+        
+        let name = username ?? ""
+        let dateOfBirth = self.dateField.text ?? ""
+        
+        if self.friend == nil {
+            self.manager.addNewFriend(name: name, dateOfBirth: dateOfBirth)
         } else {
-            print("Error date")
+            self.friend?.updateFriend(newName: name, newDate: dateOfBirth)
         }
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
         
         

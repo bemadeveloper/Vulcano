@@ -12,8 +12,7 @@ class FriendsViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var friends: [[Friend]]?
-    
+    private let manager = StorageManager.shared
     
     // MARK: - UI
     
@@ -23,14 +22,14 @@ class FriendsViewController: UIViewController {
     // MARK: - Table
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = .clear
-        tableView.backgroundView = nil
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
+        let table = UITableView(frame: .zero, style: .insetGrouped)
+        table.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.delegate = self
+        table.dataSource = self
+        
+        return table
     }()
     
     // MARK: - Lyfecycle
@@ -39,17 +38,16 @@ class FriendsViewController: UIViewController {
         super.viewDidLoad()
         setGradientBackground()
         setupUI()
-        friends = Friend.friends
         //navigationController?.navigationBar.prefersLargeTitles = true
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
-    
+        
     // MARK: - Setup
     private func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
@@ -64,13 +62,7 @@ class FriendsViewController: UIViewController {
     }
     
     private func setupUI() {
-        print("h")
-        print(addButton.frame)
-        DispatchQueue.main.async {
-            print("friendsLabel frame: \(self.friendsLabel.frame)")
-            print("addButton frame: \(self.addButton.frame)")
-            print("tableView frame: \(self.tableView.frame)")
-        }
+        
         addButton.setTitle("Add", for: .normal)
         addButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         addButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
@@ -108,6 +100,11 @@ class FriendsViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { _ in
+            let addVC = AddFriendViewController()
+            
+            self.navigationController?.pushViewController(addVC, animated: true)
+        }))
     }
     
     @objc private func addButtonTappedFor() {
@@ -120,61 +117,58 @@ class FriendsViewController: UIViewController {
 }
 
 extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        friends?[section].count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        friends?.count ?? 0
+        manager.friends.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell
-        cell?.friend = friends?[indexPath.section][indexPath.row]
-        cell?.accessoryType = .detailDisclosureButton
-        return cell ?? UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as! CustomTableViewCell
+        cell.nameLabel.text = manager.friends[indexPath.row].name
+        cell.dateLabel.text = manager.friends[indexPath.row].dateOfBirth
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let vc = AddFriendViewController()
+        vc.friend = manager.friends[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let friend = manager.friends[indexPath.row]
+            manager.friends.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completionHandler) in
-            self.friends?[indexPath.section].remove(at: indexPath.row)
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            self.manager.friends.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
-        deleteAction.image = UIImage(systemName: "trash.fill")
-        deleteAction.backgroundColor = UIColor(hex: "#B00D22")
-        
-        let editAction = UIContextualAction(style: .normal, title: nil) { (action, view, completionHandler) in
-            let friend = self.friends?[indexPath.section][indexPath.row]
-            
-            let editFriendViewController = EditFriendViewController()
-            editFriendViewController.friend = friend
-            
-            editFriendViewController.completionHandler = { editedFriend in
-            
-                self.friends?[indexPath.section][indexPath.row] = editedFriend
-                tableView.reloadRows(at: [indexPath], with: .automatic)
-            }
-            self.present(editFriendViewController, animated: true, completion: nil)
-            
+        deleteAction.image = UIImage(systemName: "trash")
+
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+            let vc = EditFriendViewController()
+            vc.friend = self.manager.friends[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
             completionHandler(true)
         }
         editAction.image = UIImage(systemName: "pencil")
         editAction.backgroundColor = .systemOrange
-        
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+
+        let addAction = UIContextualAction(style: .normal, title: "Add") { (action, view, completionHandler) in
+            let vc = AddFriendViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            completionHandler(true)
+        }
+        addAction.image = UIImage(systemName: "plus")
+
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction, addAction])
+        configuration.performsFirstActionWithFullSwipe = false
         return configuration
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // Этот метод вызывается, когда пользователь совершает свайп
-        // Если вы уже реализовали удаление ячейки в методе trailingSwipeActionsConfigurationForRowAt, этот метод можно оставить пустым
     }
 }
