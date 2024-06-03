@@ -50,11 +50,12 @@ class LoginViewControllerSecond: UIViewController {
     }()
     
     private lazy var nextButton: UIButton = {
-        let nextButton = UIButton(primaryAction: action)
+        let nextButton = UIButton()
         nextButton.setTitle("Next", for: .normal)
         nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         nextButton.layer.cornerRadius = 15
         nextButton.backgroundColor = UIColor(hex: "#B00D22")
+        nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         nextButton.setTitleColor(.white, for: .normal)
         return nextButton
     }()
@@ -164,22 +165,30 @@ class LoginViewControllerSecond: UIViewController {
         dateField.resignFirstResponder()
     }
     
-    lazy var action = UIAction { [weak self] _ in
-        let nextViewController = PersonalCard()
-        nextViewController.username = self?.username
-        nextViewController.date = self?.dateField.text
-        
-        guard let self = self else { return }
-        
-        let name = username ?? ""
-        let dateOfBirth = self.dateField.text ?? ""
-        
-        if self.friend == nil {
-            self.manager.addNewFriend(name: name, dateOfBirth: dateOfBirth)
+    @objc private func buttonTapped() {
+        if dateField.text != "" {
+            let nextViewController = PersonalCard()
+            nextViewController.username = self.username
+            nextViewController.date = self.dateField.text
+            
+            let name = username ?? ""
+            let dateOfBirth = self.dateField.text ?? ""
+            
+            if self.friend == nil {
+                self.manager.addNewFriend(name: name, dateOfBirth: dateOfBirth)
+            } else {
+                self.friend?.updateFriend(newName: name, newDate: dateOfBirth)
+            }
+            navigationController?.pushViewController(nextViewController, animated: true)
         } else {
-            self.friend?.updateFriend(newName: name, newDate: dateOfBirth)
+            let alert = UIAlertController(
+                title: "Nothing was written",
+                message: "Please enter the date",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "Ok!", style: .cancel))
+            self.present(alert, animated: true)
         }
-        navigationController?.pushViewController(nextViewController, animated: true)
     }
         
         

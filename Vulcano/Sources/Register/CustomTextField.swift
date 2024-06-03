@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CustomTextField: UITextField {
+class CustomTextField: UITextField, UITextFieldDelegate {
     
     // MARK: - UI
     
@@ -35,6 +35,7 @@ class CustomTextField: UITextField {
         self.layer.cornerRadius = 10
         
         self.returnKeyType = .done
+        self.delegate = self
         self.autocorrectionType = .no
         self.autocapitalizationType = .none
         self.textColor = .white
@@ -66,6 +67,11 @@ class CustomTextField: UITextField {
         ]
         let attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: placeholderAttributes)
         self.attributedPlaceholder = attributedPlaceholder
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }

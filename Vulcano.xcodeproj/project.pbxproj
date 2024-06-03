@@ -38,6 +38,8 @@
 		D7210E272C0C6ACB00F7235F /* ListOfFriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7210E252C0C6ACA00F7235F /* ListOfFriends.xcdatamodeld */; };
 		D7210E2B2C0C6B7800F7235F /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E292C0C6B7800F7235F /* List+CoreDataProperties.swift */; };
 		D7210E2D2C0C6C4600F7235F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E2C2C0C6C4600F7235F /* StorageManager.swift */; };
+		D74C522C2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C522A2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift */; };
+		D74C522E2C0E42880052D2FF /* CompetitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C522D2C0E42880052D2FF /* CompetitionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		D7210E262C0C6ACB00F7235F /* ListOfFriends.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListOfFriends.xcdatamodel; sourceTree = "<group>"; };
 		D7210E292C0C6B7800F7235F /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7210E2C2C0C6C4600F7235F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D74C522A2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D74C522D2C0E42880052D2FF /* CompetitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		D7210DC52C07327D00F7235F = {
 			isa = PBXGroup;
 			children = (
+				D74C522A2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift */,
 				D7210E292C0C6B7800F7235F /* List+CoreDataProperties.swift */,
 				D7210DD02C07327D00F7235F /* Vulcano */,
 				D7210DCF2C07327D00F7235F /* Products */,
@@ -183,6 +188,7 @@
 				D7210E022C09EB1600F7235F /* TabViewController.swift */,
 				D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */,
 				D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */,
+				D74C522D2C0E42880052D2FF /* CompetitionManager.swift */,
 			);
 			path = Competitions;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */,
 				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
+				D74C522C2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift in Sources */,
 				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
 				D7210E1B2C0B177100F7235F /* EditFriendViewController.swift in Sources */,
 				D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */,
@@ -326,6 +333,7 @@
 				D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */,
 				D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */,
 				D7210E0F2C09FEE100F7235F /* NotesVC.swift in Sources */,
+				D74C522E2C0E42880052D2FF /* CompetitionManager.swift in Sources */,
 				D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */,
 				D7210DF92C074F4700F7235F /* Model.swift in Sources */,
 				D7210E2D2C0C6C4600F7235F /* StorageManager.swift in Sources */,

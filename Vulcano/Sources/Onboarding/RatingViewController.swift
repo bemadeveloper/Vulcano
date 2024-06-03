@@ -14,7 +14,7 @@ class RatingViewController: UIViewController {
     // MARK: - UI
 
     private let vulcanoImage = UIImageView()
-    private let nextButton = UIButton()
+    private let enableButton = UIButton()
     private let stayLabel = UILabel()
     private let closeButton = UIButton()
 
@@ -25,7 +25,7 @@ class RatingViewController: UIViewController {
         setColorBackground()
         setupUI()
         loadData()
-        setupNavigationBar()
+        //setupNavigationBar()
     }
 
     // MARK: - Setup
@@ -38,9 +38,9 @@ class RatingViewController: UIViewController {
         view.backgroundColor = UIColor(hex: "#1A1717")
     }
 
-    private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonTapped))
-    }
+//    private func setupNavigationBar() {
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonTapped))
+//    }
 
     private func setupUI() {
         vulcanoImage.image = UIImage(named: "IMG-6")
@@ -52,25 +52,25 @@ class RatingViewController: UIViewController {
         stayLabel.font = .systemFont(ofSize: 32, weight: .bold)
         stayLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        nextButton.setTitle("Enable", for: .normal)
-        nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        nextButton.layer.cornerRadius = 15
-        nextButton.backgroundColor = UIColor(hex: "#B00D22")
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        enableButton.setTitle("Enable", for: .normal)
+        enableButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        enableButton.layer.cornerRadius = 15
+        enableButton.backgroundColor = UIColor(hex: "#B00D22")
+        enableButton.setTitleColor(.white, for: .normal)
+        enableButton.translatesAutoresizingMaskIntoConstraints = false
+        enableButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
-        closeButton.setImage(UIImage(named: "xmark.circle"), for: .normal)
+        closeButton.setImage(UIImage(systemName: "xmark.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpOutside)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
 
         view.addSubview(vulcanoImage)
-        view.addSubview(nextButton)
+        view.addSubview(enableButton)
         view.addSubview(stayLabel)
         view.addSubview(closeButton)
 
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor),
+            closeButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 30),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
             stayLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -79,25 +79,30 @@ class RatingViewController: UIViewController {
             vulcanoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             vulcanoImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            nextButton.heightAnchor.constraint(equalToConstant: 50),
-            nextButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85)
+            enableButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            enableButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            enableButton.heightAnchor.constraint(equalToConstant: 50),
+            enableButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85)
         ])
     }
 
     @objc private func nextButtonTapped() {
         requestNotificationAuthorization()
+        let newViewController = CompetitionsFirstVC()
+        navigationController?.pushViewController(newViewController, animated: true)
     }
 
     @objc private func closeButtonTapped() {
-        // Handle close button action here
-        dismiss(animated: true, completion: nil)
+        let newViewController = CompetitionsFirstVC()
+        navigationController?.pushViewController(newViewController, animated: true)
     }
 
     private func requestNotificationAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] (granted, error) in
             guard granted else {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Notifications Disabled", message: "You have denied notification permissions. To enable notifications, go to Settings.")
+                }
                 print("Notification authorization denied")
                 return
             }
@@ -109,11 +114,24 @@ class RatingViewController: UIViewController {
 
     private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            let nextViewController = TabViewController()
-            self.navigationController?.pushViewController(nextViewController, animated: true)
-        }))
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsURL) {
+                UIApplication.shared.open(settingsURL, completionHandler: { (success) in
+                    print("Settings opened: \(success)")
+                })
+            }
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(settingsAction)
+        
         present(alertController, animated: true, completion: nil)
     }
+
 }
 

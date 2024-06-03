@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-import UIKit
-
 class LoginViewController: UIViewController {
     
     var username: String?
@@ -125,12 +123,21 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func nextButtonTapped() {
-        let nextViewController = LoginViewControllerSecond()
-        let personalCard = PersonalCard()
-        personalCard.username = usernameField.text
-        nextViewController.username = usernameField.text
-        navigationController?.pushViewController(nextViewController, animated: true)
-       
+        if usernameField.text != "" {
+            let nextViewController = LoginViewControllerSecond()
+            let personalCard = PersonalCard()
+            personalCard.username = usernameField.text
+            nextViewController.username = usernameField.text
+            navigationController?.pushViewController(nextViewController, animated: true)
+        } else {
+            let alert = UIAlertController(
+                title: "Nothing was written",
+                message: "Please enter the name",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "Ok!", style: .cancel))
+            self.present(alert, animated: true)
+        }
     }
 }
 
