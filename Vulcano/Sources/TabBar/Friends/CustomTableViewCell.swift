@@ -8,6 +8,8 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
+    
+    static let identifier = "CustomCell"
 
     // MARK: - Outlets
     
@@ -18,17 +20,19 @@ class CustomTableViewCell: UITableViewCell {
         }
     }
     
-    private let nameLabel: UILabel = {
+    let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let dateLabel: UILabel = {
+    let dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -37,7 +41,7 @@ class CustomTableViewCell: UITableViewCell {
         stack.alignment = .leading
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.spacing = 1
+        stack.spacing = 3
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -65,16 +69,17 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     private func setupHierarchy() {
-        self.addSubview(stack)
+        contentView.addSubview(stack)
         stack.addArrangedSubview(nameLabel)
         stack.addArrangedSubview(dateLabel)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-            stack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            stack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
     

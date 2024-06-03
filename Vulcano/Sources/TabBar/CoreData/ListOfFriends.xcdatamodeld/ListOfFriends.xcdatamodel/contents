@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CompetitionData" representedClassName="CompetitionData" syncable="YES">
+        <attribute name="dateOfCompetition" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nameOfCompetition" optional="YES" attributeType="String"/>
+        <attribute name="winner" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DataNotesFor" representedClassName="DataNotesFor" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="noteDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="noteName" optional="YES" attributeType="String"/>
+        <attribute name="noteWriter" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="List" representedClassName="List" syncable="YES">
+        <attribute name="dateOfBirth" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="old" optional="YES" attributeType="String"/>
+    </entity>
+</model>

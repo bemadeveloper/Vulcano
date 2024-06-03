@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 class EditFriendViewController: UIViewController {
-    var friend: Friend?
-    var completionHandler: ((Friend) -> Void)?
+    
+    var friend: List?
+    var completionHandler: ((List) -> Void)?
     
     
     private let headerTitle = UILabel()
@@ -140,7 +141,7 @@ class EditFriendViewController: UIViewController {
         
         if let friend = friend {
             usernameField.text = friend.name
-            dateField.text = friend.date
+            dateField.text = friend.dateOfBirth
         }
     }
     
@@ -165,11 +166,12 @@ class EditFriendViewController: UIViewController {
         }
         
         friend?.name = name
-        friend?.date = date
+        friend?.dateOfBirth = date
         
         if let friend = friend {
             completionHandler?(friend)
         }
+        self.friend?.updateFriend(newName: name, newDate: date)
         navigationController?.popViewController(animated: true)
     }
     

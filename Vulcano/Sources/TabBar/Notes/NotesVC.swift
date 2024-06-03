@@ -68,10 +68,8 @@ class NotesVC: UIViewController, UIScrollViewDelegate {
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        // Настройка ячеек в UIScrollView
         setupPages()
         
-        // Добавляем действие при изменении страницы
         pageControl.addTarget(self, action: #selector(pageControlChanged(_:)), for: .valueChanged)
     }
     
@@ -101,12 +99,11 @@ class NotesVC: UIViewController, UIScrollViewDelegate {
             stackView.axis = .vertical
             stackView.alignment = .fill
             stackView.distribution = .fill
-            stackView.spacing = 5 // Установите меньшее значение для уменьшения расстояния
+            stackView.spacing = 5
             stackView.translatesAutoresizingMaskIntoConstraints = false
             
             cellView.addSubview(stackView)
             
-            // Добавляем распознаватель жестов для ячейки
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapped(_:)))
             cellView.addGestureRecognizer(tapGesture)
             cellView.isUserInteractionEnabled = true

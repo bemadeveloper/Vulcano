@@ -12,16 +12,31 @@ class AddFriendViewController: UIViewController {
     
     private let headerTitle = UILabel()
     
+    let dateFormatter = DateFormatter()
+    private let manager = StorageManager.shared
+    var friend: List?
+    
     let dateField = CustomTextField(fieldType: .dateOfBirth)
     let datePicker = UIDatePicker()
     private let dateOfBirth = UILabel()
     
     let usernameField = CustomTextField(fieldType: .name)
     private let fullName = UILabel()
+    
 
     // MARK: - Properties
 
-    private let saveButton = UIButton()
+    private lazy var saveButton = {
+        let saveButton = UIButton(primaryAction: action)
+        saveButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        saveButton.tintColor = .white
+        saveButton.layer.cornerRadius = saveButton.frame.width / 2
+        saveButton.layer.masksToBounds = true
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -5.0, bottom: 0, right: 5.0)
+        return saveButton
+    }()
 
     // MARK: - Lifecycle
 
@@ -63,14 +78,6 @@ class AddFriendViewController: UIViewController {
     }
     
     private func setupUI() {
-        saveButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
-        saveButton.tintColor = .white
-        saveButton.layer.cornerRadius = saveButton.frame.width / 2
-        saveButton.layer.masksToBounds = true
-        saveButton.setTitleColor(.white, for: .normal)
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        saveButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -5.0, bottom: 0, right: 5.0)
         
         fullName.textColor = UIColor(hex: "#B00D22")
         fullName.text = "Full name"
@@ -154,5 +161,20 @@ class AddFriendViewController: UIViewController {
         let newFriend = Friend(name: usernameField.text ?? "None", date: dateField.text ?? "None")
         Friend.addFriend(newFriend)
         navigationController?.popViewController(animated: true)
+    }
+    
+    lazy var action = UIAction { [weak self] _ in
+        guard let self = self else { return }
+        
+        let name = self.usernameField.text ?? ""
+        
+        let dateOfBirth = self.dateField.text ?? ""
+        
+        if self.friend == nil {
+            self.manager.addNewFriend(name: name, dateOfBirth: dateOfBirth)
+        } else {
+            self.friend?.updateFriend(newName: name, newDate: dateOfBirth)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
 }

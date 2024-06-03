@@ -68,7 +68,7 @@ class CellSetting: UITableViewCell {
     // MARK: - Configure
     
     func configure(with setting: CustomSettingModel) {
-        settingImageView.image = setting.type.image
+        settingImageView.image = setting.type.image.withTintColor(.systemRed)
         settingLabel.text = setting.type.rawValue
     }
 }
