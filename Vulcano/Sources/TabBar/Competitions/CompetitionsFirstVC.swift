@@ -118,10 +118,8 @@ extension CompetitionsFirstVC: UICalendarViewDelegate {
         formatter.timeStyle = .none
         let dateString = formatter.string(from: date)
         
-        // Показать дату в консоли или использовать ее другим способом
         print("Selected date: \(dateString)")
         
-        // Вывести дату на экран, например, в алерте
         let alertController = UIAlertController(title: "Selected Date", message: dateString, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)

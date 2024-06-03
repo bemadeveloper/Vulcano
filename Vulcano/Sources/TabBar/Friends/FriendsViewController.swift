@@ -39,7 +39,6 @@ class FriendsViewController: UIViewController {
         setGradientBackground()
         setupUI()
         //navigationController?.navigationBar.prefersLargeTitles = true
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

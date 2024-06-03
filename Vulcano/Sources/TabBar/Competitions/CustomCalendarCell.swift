@@ -14,7 +14,7 @@ class CustomCalendarCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.textColor = .white // Устанавливаем цвет текста на белый
+        label.textColor = .white
         return label
     }()
     
