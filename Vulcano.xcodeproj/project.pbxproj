@@ -10,9 +10,34 @@
 		D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DD12C07327D00F7235F /* AppDelegate.swift */; };
 		D7210DD42C07327D00F7235F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DD32C07327D00F7235F /* SceneDelegate.swift */; };
 		D7210DD62C07327D00F7235F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DD52C07327D00F7235F /* ViewController.swift */; };
-		D7210DD92C07327D00F7235F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D7210DD82C07327D00F7235F /* Base */; };
 		D7210DDB2C07327E00F7235F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7210DDA2C07327E00F7235F /* Assets.xcassets */; };
 		D7210DDE2C07327E00F7235F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D7210DDD2C07327E00F7235F /* Base */; };
+		D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DE92C07350B00F7235F /* AuthHeaderView.swift */; };
+		D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DEB2C07353700F7235F /* LoginViewController.swift */; };
+		D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DED2C07355A00F7235F /* CustomTextField.swift */; };
+		D7210DF02C07357B00F7235F /* LoginViewControllerSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DEF2C07357B00F7235F /* LoginViewControllerSecond.swift */; };
+		D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF12C07359400F7235F /* PersonalCard.swift */; };
+		D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF32C0735AF00F7235F /* ScreenLoading.swift */; };
+		D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF52C07368A00F7235F /* LoadingView.swift */; };
+		D7210DF92C074F4700F7235F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DF82C074F4700F7235F /* Model.swift */; };
+		D7210DFC2C079EFC00F7235F /* OnboardingFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */; };
+		D7210DFE2C08C5ED00F7235F /* OnboardingSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */; };
+		D7210E002C09DF4000F7235F /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210DFF2C09DF4000F7235F /* RatingViewController.swift */; };
+		D7210E032C09EB1600F7235F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E022C09EB1600F7235F /* TabViewController.swift */; };
+		D7210E052C09FBFF00F7235F /* CompetitionsFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */; };
+		D7210E082C09FD7500F7235F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E072C09FD7500F7235F /* FriendsViewController.swift */; };
+		D7210E0F2C09FEE100F7235F /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E0E2C09FEE100F7235F /* NotesVC.swift */; };
+		D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E102C09FF1600F7235F /* SettingsVC.swift */; };
+		D7210E132C0A14D200F7235F /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */; };
+		D7210E152C0A534300F7235F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E142C0A534300F7235F /* Friend.swift */; };
+		D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E162C0A548200F7235F /* CustomTableViewCell.swift */; };
+		D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E182C0A704A00F7235F /* AddFriendViewController.swift */; };
+		D7210E1B2C0B177100F7235F /* EditFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */; };
+		D7210E212C0B5AD400F7235F /* CustomSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E202C0B5AD400F7235F /* CustomSettingModel.swift */; };
+		D7210E232C0B5E2F00F7235F /* CellSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E222C0B5E2F00F7235F /* CellSetting.swift */; };
+		D7210E272C0C6ACB00F7235F /* ListOfFriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7210E252C0C6ACA00F7235F /* ListOfFriends.xcdatamodeld */; };
+		D7210E2B2C0C6B7800F7235F /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E292C0C6B7800F7235F /* List+CoreDataProperties.swift */; };
+		D7210E2D2C0C6C4600F7235F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E2C2C0C6C4600F7235F /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +45,35 @@
 		D7210DD12C07327D00F7235F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7210DD32C07327D00F7235F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7210DD52C07327D00F7235F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D7210DD82C07327D00F7235F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7210DDA2C07327E00F7235F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7210DDD2C07327E00F7235F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7210DDF2C07327E00F7235F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7210DE92C07350B00F7235F /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		D7210DEB2C07353700F7235F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D7210DED2C07355A00F7235F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D7210DEF2C07357B00F7235F /* LoginViewControllerSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSecond.swift; sourceTree = "<group>"; };
+		D7210DF12C07359400F7235F /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
+		D7210DF32C0735AF00F7235F /* ScreenLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLoading.swift; sourceTree = "<group>"; };
+		D7210DF52C07368A00F7235F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D7210DF82C074F4700F7235F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirst.swift; sourceTree = "<group>"; };
+		D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecond.swift; sourceTree = "<group>"; };
+		D7210DFF2C09DF4000F7235F /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		D7210E022C09EB1600F7235F /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsFirstVC.swift; sourceTree = "<group>"; };
+		D7210E072C09FD7500F7235F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		D7210E0E2C09FEE100F7235F /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
+		D7210E102C09FF1600F7235F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarCell.swift; sourceTree = "<group>"; };
+		D7210E142C0A534300F7235F /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		D7210E162C0A548200F7235F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D7210E182C0A704A00F7235F /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendViewController.swift; sourceTree = "<group>"; };
+		D7210E202C0B5AD400F7235F /* CustomSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingModel.swift; sourceTree = "<group>"; };
+		D7210E222C0B5E2F00F7235F /* CellSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSetting.swift; sourceTree = "<group>"; };
+		D7210E262C0C6ACB00F7235F /* ListOfFriends.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListOfFriends.xcdatamodel; sourceTree = "<group>"; };
+		D7210E292C0C6B7800F7235F /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D7210E2C2C0C6C4600F7235F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +90,7 @@
 		D7210DC52C07327D00F7235F = {
 			isa = PBXGroup;
 			children = (
+				D7210E292C0C6B7800F7235F /* List+CoreDataProperties.swift */,
 				D7210DD02C07327D00F7235F /* Vulcano */,
 				D7210DCF2C07327D00F7235F /* Products */,
 			);
@@ -56,15 +107,135 @@
 		D7210DD02C07327D00F7235F /* Vulcano */ = {
 			isa = PBXGroup;
 			children = (
+				D7210DF72C074F2400F7235F /* Model */,
+				D7210DE52C0733E700F7235F /* App */,
+				D7210DE62C07345900F7235F /* Sources */,
+				D7210DE72C07346B00F7235F /* Resources */,
+			);
+			path = Vulcano;
+			sourceTree = "<group>";
+		};
+		D7210DE52C0733E700F7235F /* App */ = {
+			isa = PBXGroup;
+			children = (
 				D7210DD12C07327D00F7235F /* AppDelegate.swift */,
 				D7210DD32C07327D00F7235F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D7210DE62C07345900F7235F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E092C09FE8700F7235F /* TabBar */,
+				D7210DFA2C079EE400F7235F /* Onboarding */,
+				D7210DE82C0734F600F7235F /* Register */,
 				D7210DD52C07327D00F7235F /* ViewController.swift */,
-				D7210DD72C07327D00F7235F /* Main.storyboard */,
+				D7210DF52C07368A00F7235F /* LoadingView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D7210DE72C07346B00F7235F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D7210DDA2C07327E00F7235F /* Assets.xcassets */,
 				D7210DDC2C07327E00F7235F /* LaunchScreen.storyboard */,
 				D7210DDF2C07327E00F7235F /* Info.plist */,
 			);
-			path = Vulcano;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7210DE82C0734F600F7235F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DE92C07350B00F7235F /* AuthHeaderView.swift */,
+				D7210DEB2C07353700F7235F /* LoginViewController.swift */,
+				D7210DED2C07355A00F7235F /* CustomTextField.swift */,
+				D7210DEF2C07357B00F7235F /* LoginViewControllerSecond.swift */,
+				D7210DF12C07359400F7235F /* PersonalCard.swift */,
+				D7210DF32C0735AF00F7235F /* ScreenLoading.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		D7210DF72C074F2400F7235F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DF82C074F4700F7235F /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D7210DFA2C079EE400F7235F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D7210DFB2C079EFC00F7235F /* OnboardingFirst.swift */,
+				D7210DFD2C08C5ED00F7235F /* OnboardingSecond.swift */,
+				D7210DFF2C09DF4000F7235F /* RatingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D7210E012C09E7DE00F7235F /* Competitions */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E022C09EB1600F7235F /* TabViewController.swift */,
+				D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */,
+				D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */,
+			);
+			path = Competitions;
+			sourceTree = "<group>";
+		};
+		D7210E062C09FD4900F7235F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E072C09FD7500F7235F /* FriendsViewController.swift */,
+				D7210E142C0A534300F7235F /* Friend.swift */,
+				D7210E162C0A548200F7235F /* CustomTableViewCell.swift */,
+				D7210E182C0A704A00F7235F /* AddFriendViewController.swift */,
+				D7210E1A2C0B177100F7235F /* EditFriendViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		D7210E092C09FE8700F7235F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E242C0C6A9200F7235F /* CoreData */,
+				D7210E0D2C09FED400F7235F /* Settings */,
+				D7210E0C2C09FECD00F7235F /* Notes */,
+				D7210E062C09FD4900F7235F /* Friends */,
+				D7210E012C09E7DE00F7235F /* Competitions */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D7210E0C2C09FECD00F7235F /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E0E2C09FEE100F7235F /* NotesVC.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		D7210E0D2C09FED400F7235F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E102C09FF1600F7235F /* SettingsVC.swift */,
+				D7210E202C0B5AD400F7235F /* CustomSettingModel.swift */,
+				D7210E222C0B5E2F00F7235F /* CellSetting.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D7210E242C0C6A9200F7235F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D7210E252C0C6ACA00F7235F /* ListOfFriends.xcdatamodeld */,
+				D7210E2C2C0C6C4600F7235F /* StorageManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +298,6 @@
 			files = (
 				D7210DDB2C07327E00F7235F /* Assets.xcassets in Resources */,
 				D7210DDE2C07327E00F7235F /* Base in Resources */,
-				D7210DD92C07327D00F7235F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +308,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7210E152C0A534300F7235F /* Friend.swift in Sources */,
+				D7210E132C0A14D200F7235F /* CustomCalendarCell.swift in Sources */,
+				D7210E212C0B5AD400F7235F /* CustomSettingModel.swift in Sources */,
+				D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */,
+				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
+				D7210DEA2C07350B00F7235F /* AuthHeaderView.swift in Sources */,
+				D7210E1B2C0B177100F7235F /* EditFriendViewController.swift in Sources */,
+				D7210DEE2C07355A00F7235F /* CustomTextField.swift in Sources */,
+				D7210E052C09FBFF00F7235F /* CompetitionsFirstVC.swift in Sources */,
+				D7210E192C0A704A00F7235F /* AddFriendViewController.swift in Sources */,
+				D7210E082C09FD7500F7235F /* FriendsViewController.swift in Sources */,
+				D7210E032C09EB1600F7235F /* TabViewController.swift in Sources */,
+				D7210DF62C07368A00F7235F /* LoadingView.swift in Sources */,
+				D7210DF42C0735AF00F7235F /* ScreenLoading.swift in Sources */,
+				D7210DF22C07359400F7235F /* PersonalCard.swift in Sources */,
 				D7210DD22C07327D00F7235F /* AppDelegate.swift in Sources */,
+				D7210E0F2C09FEE100F7235F /* NotesVC.swift in Sources */,
+				D7210DEC2C07353700F7235F /* LoginViewController.swift in Sources */,
+				D7210DF92C074F4700F7235F /* Model.swift in Sources */,
+				D7210E2D2C0C6C4600F7235F /* StorageManager.swift in Sources */,
+				D7210E2B2C0C6B7800F7235F /* List+CoreDataProperties.swift in Sources */,
+				D7210DF02C07357B00F7235F /* LoginViewControllerSecond.swift in Sources */,
+				D7210DFE2C08C5ED00F7235F /* OnboardingSecond.swift in Sources */,
 				D7210DD42C07327D00F7235F /* SceneDelegate.swift in Sources */,
+				D7210E272C0C6ACB00F7235F /* ListOfFriends.xcdatamodeld in Sources */,
+				D7210DFC2C079EFC00F7235F /* OnboardingFirst.swift in Sources */,
+				D7210E232C0B5E2F00F7235F /* CellSetting.swift in Sources */,
+				D7210E002C09DF4000F7235F /* RatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D7210DD72C07327D00F7235F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D7210DD82C07327D00F7235F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D7210DDC2C07327E00F7235F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,10 +482,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDQUFL254V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vulcano/Info.plist;
+				INFOPLIST_FILE = Vulcano/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,10 +509,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDQUFL254V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vulcano/Info.plist;
+				INFOPLIST_FILE = Vulcano/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +549,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D7210E252C0C6ACA00F7235F /* ListOfFriends.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D7210E262C0C6ACB00F7235F /* ListOfFriends.xcdatamodel */,
+			);
+			currentVersion = D7210E262C0C6ACB00F7235F /* ListOfFriends.xcdatamodel */;
+			name = ListOfFriends.xcdatamodeld;
+			path = /Applications/Vulcano/Vulcano/Sources/TabBar/CoreData/ListOfFriends.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D7210DC62C07327D00F7235F /* Project object */;
 }
