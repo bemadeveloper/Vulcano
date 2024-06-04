@@ -20,18 +20,22 @@ extension CompetitionData {
         return NSFetchRequest<CompetitionData>(entityName: "CompetitionData")
     }
 
-    @NSManaged public var dateOfCompetition: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var nameOfCompetition: String?
+    @NSManaged public var dateOfCompetition: Date?
     @NSManaged public var winner: String?
+    @NSManaged public var listOfParticipants: String?
+    @NSManaged public var time: String?
 
 }
 
 extension CompetitionData : Identifiable {
-    func updateCompetition(newName: String, newDate: Date, newWinner: String) {
+    func updateCompetition(newName: String, newDate: Date, newWinner: String, newListOfParticipants: String, newTime: String) {
         self.nameOfCompetition = newName
         self.dateOfCompetition = newDate
         self.winner = newWinner
+        self.listOfParticipants = newListOfParticipants
+        self.time = newTime
         
         try? managedObjectContext?.save()
     }

@@ -80,8 +80,6 @@ class TabViewController: UITabBarController {
         tabBar.tintColor = .red
         tabBar.unselectedItemTintColor = .systemGray3
         
-//        tabBar.layer.borderWidth = 1.5
-//        tabBar.layer.borderColor = UIColor.black.cgColor
     }
 
 }

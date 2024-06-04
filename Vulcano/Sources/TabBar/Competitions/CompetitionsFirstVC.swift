@@ -106,7 +106,7 @@ class CompetitionsFirstVC: UIViewController {
     }
     
     @objc private func addButtonTapped() {
-        let nextViewController = ScreenLoading()
+        let nextViewController = MyCompetitionViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 }

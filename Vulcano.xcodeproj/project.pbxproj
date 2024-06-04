@@ -40,6 +40,7 @@
 		D7210E2D2C0C6C4600F7235F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7210E2C2C0C6C4600F7235F /* StorageManager.swift */; };
 		D74C522C2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C522A2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift */; };
 		D74C522E2C0E42880052D2FF /* CompetitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C522D2C0E42880052D2FF /* CompetitionManager.swift */; };
+		D74C52302C0EF86F0052D2FF /* MyCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C522F2C0EF86F0052D2FF /* MyCompetitionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		D7210E2C2C0C6C4600F7235F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		D74C522A2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D74C522D2C0E42880052D2FF /* CompetitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionManager.swift; sourceTree = "<group>"; };
+		D74C522F2C0EF86F0052D2FF /* MyCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompetitionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				D7210E042C09FBFF00F7235F /* CompetitionsFirstVC.swift */,
 				D7210E122C0A14D100F7235F /* CustomCalendarCell.swift */,
 				D74C522D2C0E42880052D2FF /* CompetitionManager.swift */,
+				D74C522F2C0EF86F0052D2FF /* MyCompetitionViewController.swift */,
 			);
 			path = Competitions;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D7210E132C0A14D200F7235F /* CustomCalendarCell.swift in Sources */,
 				D7210E212C0B5AD400F7235F /* CustomSettingModel.swift in Sources */,
 				D7210E172C0A548200F7235F /* CustomTableViewCell.swift in Sources */,
+				D74C52302C0EF86F0052D2FF /* MyCompetitionViewController.swift in Sources */,
 				D7210E112C09FF1600F7235F /* SettingsVC.swift in Sources */,
 				D7210DD62C07327D00F7235F /* ViewController.swift in Sources */,
 				D74C522C2C0E40750052D2FF /* CompetitionData+CoreDataProperties.swift in Sources */,
